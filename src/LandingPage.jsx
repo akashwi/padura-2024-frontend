@@ -1,7 +1,7 @@
 // LandingPage.jsx
 import React from "react";
 import logo from "./assets/Logo2.png";
-import backgroundVideo from "./assets/loop3.mp4";
+import backgroundVideo from "./assets/loop3_lq.mp4";
 import styled from "styled-components";
 
 const LandingButton = styled.button`
