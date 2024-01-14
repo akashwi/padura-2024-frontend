@@ -4,7 +4,7 @@ import styled from "styled-components";
 const LyricsContainer = styled.div`
     overflow: auto;
     height: 100vh;
-    width: 100vh;
+    width: auto;
     padding: 20px;
     background-color: #282c34;
     color: #ffffff;
