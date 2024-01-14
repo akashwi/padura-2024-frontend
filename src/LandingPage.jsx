@@ -2,65 +2,36 @@
 import React from "react";
 import logo from "./assets/Logo2.png";
 import backgroundVideo from "./assets/loop3.mp4";
-import styled, { keyframes } from "styled-components";
-
-const glowing = keyframes`
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-`;
+import styled from "styled-components";
 
 const LandingButton = styled.button`
-    padding: 0.6em 2em;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
+    background-color: #000000;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #ffffff;
     cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
     position: relative;
-    z-index: 0;
-    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
 
-    &:before {
-        content: "";
-        background: linear-gradient(
-            45deg,
-            #ffffff,
-            #000000,
-        );
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        background-size: 400%;
-        z-index: -1;
-        filter: blur(5px);
-        -webkit-filter: blur(5px);
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        animation: ${glowing} 20s linear infinite;
-        transition: opacity 0.3s ease-in-out;
-        border-radius: 10px;
-    }
-
-    &:after {
-        z-index: -1;
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #222;
-        left: 0;
-        top: 0;
-        border-radius: 10px;
+    &:hover,
+    &:focus {
+        background-color: #f082ac;
     }
 `;
 
@@ -71,12 +42,17 @@ const LandingContainer = styled.div`
     height: 100vh;
     // background-color: #282c34;
     color: #ffffff;
-    font-family: 'Sevillana', cursive, Arial, sans-serif;
+    font-family: "Sevillana", cursive, Arial, sans-serif;
     text-align: center;
 
     h1 {
         padding: 0;
         margin: 0;
+        font-size: 8vw;
+    }
+
+    p {
+        font-size: 4vw;
     }
 `;
 
@@ -84,8 +60,8 @@ const BackgroundVideo = styled.video`
     position: fixed;
     top: 50%;
     left: 50%;
-    width: auto;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     z-index: -1;
     transform: translateX(-50%) translateY(-50%);
     background: no-repeat;
@@ -94,7 +70,7 @@ const BackgroundVideo = styled.video`
 `;
 
 const Logo = styled.img`
-    width: 300px; // Adjust as needed
+    width: 60vw; // Adjust as needed
     height: auto;
     margin-bottom: 5px;
 `;

@@ -10,10 +10,11 @@ const LyricsContainer = styled.div`
     color: #ffffff;
     font-family: Arial, sans-serif;
     line-height: 1.5;
+    font-size: 5vw;
 
-    @media (max-width: 600px) {
-        font-size: 14px;
-    }
+    // @media (max-width: 600px) {
+    //     font-size: 5vw;
+    // }
 `;
 
 const LyricsLine = styled.p`
