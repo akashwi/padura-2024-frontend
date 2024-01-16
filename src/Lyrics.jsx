@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const LyricsContainer = styled.div`
@@ -28,6 +28,7 @@ const LyricsLine = styled.p`
 
 const Lyrics = ({ lyrics }) => {
     const lyricsContainerRef = useRef();
+    const [prevLyrics, setPrevLyrics] = useState([]); // Newly added to fix scrolling issue
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -38,6 +39,17 @@ const Lyrics = ({ lyrics }) => {
 
         return () => clearInterval(interval);
     }, []);
+
+    // Newly added to fix scrolling issue
+    useEffect(() => {
+        if (
+            lyricsContainerRef.current &&
+            JSON.stringify(lyrics) !== JSON.stringify(prevLyrics)
+        ) {
+            lyricsContainerRef.current.scrollTop = 0;
+            setPrevLyrics(lyrics);
+        }
+    }, [lyrics]);
 
     return (
         <LyricsContainer ref={lyricsContainerRef}>
